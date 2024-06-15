@@ -1,0 +1,16 @@
+initial_screen:
+  type: initial_screen
+  text: Welcome to Flow.\nKindly enter you pin to proceed
+  next_screen: main
+
+consent:
+  type: menu_screen
+  next_screen: end_consent
+  options:
+    - Check meter balance
+    - Recharge meter
+    - Speak to an agent
+
+end_consent:
+  type: quit_screen
+  text: You have to register to use and enjoy our services. You can always register by dialling back the USSD code again! Thank you.

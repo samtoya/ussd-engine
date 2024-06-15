@@ -1,0 +1,18 @@
+services:
+  redis:
+    container_name: ussd_redis
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  app:
+    container_name: ussd_app
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env.docker
+    depends_on:
+      - redis
